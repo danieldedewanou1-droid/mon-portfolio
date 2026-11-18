@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel DEDE-WANOU — Administrateur Systèmes et Réseaux</title>
+    <meta name="description" content="Portfolio de Daniel DEDE-WANOU, étudiant en BTS SIO option SISR à l’Institut F2I : projets, stage chez Elicéo, compétences, veille technologique.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238B5CF6'/%3E%3Cstop offset='1' stop-color='%2306B6D4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='32' y='43' font-size='32' font-family='Arial' font-weight='800' text-anchor='middle' fill='white'%3ED%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="assets/fa/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <noscript><style>.reveal { opacity: 1 !important; translate: none !important; }</style></noscript>
+
+    <div class="progress"><span id="progressBar"></span></div>
+    <canvas id="net"></canvas>
+    <div class="bg-grid"></div>
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <header id="header">
+        <div class="nav-container">
+            <a href="#top" class="logo">
+                <span class="logo-mark">D</span>
+                <span class="logo-text">Daniel DEDE-WANOU</span>
+            </a>
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#parcours">Parcours</a></li>
+                    <li><a href="#projets">Projets</a></li>
+                    <li><a href="#stage">Stage</a></li>
+                    <li><a href="#competences">Compétences</a></li>
+                    <li><a href="#epreuves">E5 / E6</a></li>
+                    <li><a href="#profil">Profil</a></li>
+                    <li><a href="#veille">Veille</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="controls">
+                    <button id="themeToggle" class="icon-btn" title="Changer de thème" aria-label="Changer de thème"><i class="fa-solid fa-sun"></i></button>
+                    <button id="menuBtn" class="icon-btn menu-btn" aria-label="Ouvrir le menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="top">
+
+        <!-- ===================== ACCUEIL ===================== -->
+        <section class="hero" id="accueil">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge reveal">
+                        <span class="pulse"></span>
+                        <span>En recherche d’alternance 2026-2027</span>
+                    </div>
+                    <p class="hero-hello mono reveal" style="--rd:.08s">Bonjour, je suis</p>
+                    <h1 class="reveal" style="--rd:.16s"><span>Daniel</span><span class="grad-text">DEDE-WANOU</span></h1>
+                    <div class="typed-line mono reveal" style="--rd:.24s"><span class="prompt">&gt;</span> <span id="typed">Étudiant BTS SIO — option SISR</span><span class="caret"></span></div>
+                    <p class="hero-desc reveal" style="--rd:.32s">Étudiant en 2e année de BTS SIO option SISR à l’Institut F2I, je me forme à l’administration des systèmes et des réseaux. Mon objectif professionnel : devenir Administrateur Systèmes et Réseaux.</p>
+                    <div class="hero-btns reveal" style="--rd:.4s">
+                        <a href="#projets" class="btn btn-primary"><i class="fa-solid fa-rocket"></i><span>Découvrir mes projets</span></a>
+                        <a href="pdf/Stage-00-Dossier-de-stage-Eliceo.pdf" target="_blank" rel="noopener" class="btn btn-secondary"><i class="fa-solid fa-file-pdf"></i><span>Dossier de stage</span></a>
+                    </div>
+                    <div class="hero-tags reveal" style="--rd:.48s">
+                        <span class="tag"><i class="fa-solid fa-graduation-cap"></i> BTS SIO · SISR · 2e année</span>
+                        <span class="tag"><i class="fa-solid fa-building-columns"></i> Institut F2I</span>
+                        <span class="tag"><i class="fa-solid fa-location-dot"></i> Champs-sur-Marne</span>
+                    </div>
+                </div>
+
+                <div class="hero-visual reveal" style="--rd:.3s">
+                    <div class="hero-visual-inner">
+                        <div class="terminal tilt" id="terminal">
+                            <div class="term-bar">
+                                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                                <span class="term-title">Administrateur Systèmes et Réseaux</span>
+                            </div>
+                            <div class="term-body">
+                                <div class="terminal-role">Administrateur Systèmes et Réseaux</div>
+                            </div>
+                        </div>
+                        <div class="chip c1"><i class="fa-solid fa-network-wired"></i></div>
+                        <div class="chip c2"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="chip c3"><i class="fa-solid fa-database"></i></div>
+                        <div class="chip c4"><i class="fa-solid fa-server"></i></div>
+                    </div>
+                </div>
+            </div>
+            <a href="#parcours" class="scroll-down" aria-label="Défiler vers la suite"><i class="fa-solid fa-chevron-down"></i></a>
+        </section>
+
+        <section class="stats">
+            <div class="stats-grid">
+                <div class="stat reveal"><div class="stat-num grad-text" data-count="8">8</div><div class="stat-label">Projets documentés</div></div>
+                <div class="stat reveal" style="--rd:.1s"><div class="stat-num grad-text" data-count="6">6</div><div class="stat-label">Missions de stage détaillées</div></div>
+                <div class="stat reveal" style="--rd:.2s"><div class="stat-num grad-text" data-count="12">12</div><div class="stat-label">Compétences du référentiel illustrées (sur 14)</div></div>
+                <div class="stat reveal" style="--rd:.3s"><div class="stat-num grad-text" data-count="15">15</div><div class="stat-label">Documents PDF à consulter</div></div>
+            </div>
+        </section>
+
+        <!-- ===================== PARCOURS ===================== -->
+        <section id="parcours" class="section">
+            <div class="section-header reveal">
+                <span class="eyebrow mono">01 · Parcours</span>
+                <h2 class="section-title"><i class="fa-solid fa-route"></i><span>Parcours</span></h2>
+                <p class="section-desc">Ma formation et mon expérience en entreprise.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">2025 — en cours</div>
+                    <h3 class="timeline-title">BTS SIO option SISR</h3>
+                    <div class="timeline-company">Institut F2I</div>
+                    <ul class="timeline-desc">
+                        <li>Première année validée (2025-2026), deuxième année en cours ; examen en 2027.</li>
+                        <li>Spécialité : administration des systèmes et des réseaux, virtualisation et sécurité.</li>
+                        <li>8 projets réalisés et documentés, présentés dans la section Projets.</li>
+                    </ul>
+                    <div class="timeline-actions"><a class="mini-btn" href="#projets"><i class="fa-solid fa-diagram-project"></i> Voir mes projets</a></div>
+                </div>
+                <div class="timeline-item reveal" style="--rd:.08s">
+                    <div class="timeline-date">11 mai – 26 juin 2026 · Saint-Brice-sous-Forêt</div>
+                    <h3 class="timeline-title">Stagiaire technicien informatique</h3>
+                    <div class="timeline-company">Elicéo — Saint-Brice-sous-Forêt (Val-d’Oise)</div>
+                    <ul class="timeline-desc">
+                        <li>Intégration à l’équipe informatique ; interventions sur l’informatique de clients de l’entreprise.</li>
+                        <li>Double authentification Microsoft 365, migration de messageries OVH vers Microsoft 365, pare-feu WatchGuard.</li>
+                        <li>Schémas réseau de clients, réinstallation de postes, premier incident de stockage sur un NAS.</li>
+                    </ul>
+                    <div class="timeline-actions">
+                        <a class="mini-btn" href="pdf/Stage-00-Dossier-de-stage-Eliceo.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Dossier de stage (PDF)</a>
+                        <a class="mini-btn" href="#stage"><i class="fa-solid fa-briefcase"></i> Détail des missions</a>
+                    </div>
+                </div>
+                <div class="timeline-item reveal" style="--rd:.16s">
+                    <div class="timeline-date">2024</div>
+                    <h3 class="timeline-title">Baccalauréat général</h3>
+                    <div class="timeline-company">Lycée Sainte Émilienne d’Étaba</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== PROJETS ===================== -->
+        <section id="projets" class="section">
+            <div class="section-header reveal">
+                <span class="eyebrow mono">02 · Projets</span>
+                <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i><span>Projets et réalisations</span></h2>
+                <p class="section-desc">Chaque projet a sa fiche PDF : contexte, démarche, schémas, points de vigilance et compétences du référentiel mobilisées.</p>
+            </div>
+            <div class="filter-bar reveal">
+                <label class="field"><i class="fa-solid fa-magnifying-glass"></i><input id="projSearch" type="search" placeholder="Rechercher un projet, un outil, une compétence…" aria-label="Rechercher un projet" autocomplete="off"></label>
+                <label class="field select"><i class="fa-solid fa-filter"></i><select id="catFilter" aria-label="Filtrer par catégorie"><option value="all">Tous les projets</option><option value="systemes">Systèmes et annuaire</option><option value="reseau">Réseau</option><option value="virtualisation">Virtualisation et stockage</option><option value="securite">Sécurité</option><option value="web">Développement web</option></select><i class="fa-solid fa-chevron-down caret-ico"></i></label>
+                <span class="count mono" id="projCount" aria-live="polite">8 projets</span>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+
+                <!-- DEBUT CARTE : Active Directory — Windows Server 2022 -->
+                <article class="project-card tilt reveal" data-cats="systemes" data-search="active directory — windows server 2022 installation de windows server 2022, ajout du role ad ds, creation du domaine ief2i.lan et procedure d’integration d’un poste client windows. windows server 2022 ad ds dns ief2i.lan b2.2a b1.5 b3.3 e6" style="--c:#8B5CF6;--cr:139,92,246;--rd:0.00s">
+                    <div class="card-top">
+                        <div class="project-icon"><i class="fa-solid fa-sitemap"></i></div>
+                        <span class="card-num mono">01</span>
+                    </div>
+                    <h3 class="project-title">Active Directory — Windows Server 2022</h3>
+                    <p class="project-desc">Installation de Windows Server 2022, ajout du rôle AD DS, création du domaine ief2i.lan et procédure d’intégration d’un poste client Windows.</p>
+                    <div class="project-techs"><span class="tech-badge">Windows Server 2022</span><span class="tech-badge">AD DS</span><span class="tech-badge">DNS</span><span class="tech-badge">ief2i.lan</span></div>
+                    <p class="card-skills mono" title="Compétences du référentiel BTS SIO mobilisées"><span class="card-flag">E6</span> B2.2A · B1.5 · B3.3</p>
+                    <a class="btn-modal" href="pdf/Projet-01-Active-Directory-Windows-Server-2022.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Voir le projet</a>
+                </article>
+                <!-- FIN CARTE -->
+
+                <!-- DEBUT CARTE : GLPI — synchronisation LDAP avec Active Directory -->
+                <article class="project-card tilt reveal" data-cats="systemes" data-search="glpi — synchronisation ldap avec active directory creation des unites d’organisation et des comptes dans active directory, configuration de l’annuaire ldap dans glpi, test de connexion et import des utilisateurs. glpi ldap active directory ou b1.1 b1.5 b2.2a b3.3 e6" style="--c:#06B6D4;--cr:6,182,212;--rd:0.08s">
+                    <div class="card-top">
+                        <div class="project-icon"><i class="fa-solid fa-headset"></i></div>
+                        <span class="card-num mono">02</span>
+                    </div>
+                    <h3 class="project-title">GLPI — synchronisation LDAP avec Active Directory</h3>
+                    <p class="project-desc">Création des unités d’organisation et des comptes dans Active Directory, configuration de l’annuaire LDAP dans GLPI, test de connexion et import des utilisateurs.</p>
+                    <div class="project-techs"><span class="tech-badge">GLPI</span><span class="tech-badge">LDAP</span><span class="tech-badge">Active Directory</span><span class="tech-badge">OU</span></div>
+                    <p class="card-skills mono" title="Compétences du référentiel BTS SIO mobilisées"><span class="card-flag">E6</span> B1.1 · B1.5 · B2.2A · B3.3</p>
+                    <a class="btn-modal" href="pdf/Projet-02-GLPI-LDAP-Active-Directory.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Voir le projet</a>
+                </article>
+                <!-- FIN CARTE -->
+
+                <!-- DEBUT CARTE : Laboratoire de virtualisation VMware -->
+                <article class="project-card tilt reveal" data-cats="virtualisation" data-search="laboratoire de virtualisation vmware machines virtuelles windows 10, windows 11 et windows server sous vmware workstation pour tester et s’entrainer sans toucher au poste physique. vmware workstation windows 11 windows server tpm 2.0 b2.1a b2.2a b2.3a " style="--c:#3B82F6;--cr:59,130,246;--rd:0.16s">
+                    <div class="card-top">
+                        <div class="project-icon"><i class="fa-solid fa-cubes"></i></div>
+                        <span class="card-num mono">03</span>
+                    </div>
+                    <h3 class="project-title">Laboratoire de virtualisation VMware</h3>
+                    <p class="project-desc">Machines virtuelles Windows 10, Windows 11 et Windows Server sous VMware Workstation pour tester et s’entraîner sans toucher au poste physique.</p>
+                    <div class="project-techs"><span class="tech-badge">VMware Workstation</span><span class="tech-badge">Windows 11</span><span class="tech-badge">Windows Server</span><span class="tech-badge">TPM 2.0</span></div>
+                    <p class="card-skills mono" title="Compétences du référentiel BTS SIO mobilisées">B2.1A · B2.2A · B2.3A</p>
+                    <a class="btn-modal" href="pdf/Projet-03-Laboratoire-VMware-Workstation.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Voir le projet</a>
+                </article>
+                <!-- FIN CARTE -->
+
+                <!-- DEBUT CARTE : Réseau domestique et NAS Synology -->
+                <article class="project-card tilt reveal" data-cats="reseau virtualisation" data-search="reseau domestique et nas synology administration d’un nas synology (ssh, quickconnect) et fiabilisation du reseau local : acces administrateur de la freebox, point d’acces wi-fi tp-link. synology dsm ssh quickconnect wi-fi b1.1 b2.2a b2.3a b3.4 " style="--c:#10B981;--cr:16,185,129;--rd:0.00s">
+                    <div class="card-top">
+                        <div class="project-icon"><i class="fa-solid fa-hard-drive"></i></div>
+                        <span class="card-num mono">04</span>
+                    </div>
+                    <h3 class="project-title">Réseau domestique et NAS Synology</h3>
+                    <p class="project-desc">Administration d’un NAS Synology (SSH, QuickConnect) et fiabilisation du réseau local : accès administrateur de la Freebox, point d’accès Wi-Fi TP-Link.</p>
+                    <div class="project-techs"><span class="tech-badge">Synology DSM</span><span class="tech-badge">SSH</span><span class="tech-badge">QuickConnect</span><span class="tech-badge">Wi-Fi</span></div>
+                    <p class="card-skills mono" title="Compétences du référentiel BTS SIO mobilisées">B1.1 · B2.2A · B2.3A · B3.4</p>
+                    <a class="btn-modal" href="pdf/Projet-04-Reseau-domestique-NAS-Synology.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Voir le projet</a>
+                </article>
+                <!-- FIN CARTE -->
+
+                <!-- DEBUT CARTE : Sauvegardes automatisées vers le NAS -->
+                <article class="project-card tilt reveal" data-cats="virtualisation securite" data-search="sauvegardes automatisees vers le nas scripts robocopy planifies avec le planificateur de taches windows pour sauvegarder des donnees vers le nas sans manipulation manuelle. robocopy planificateur de taches nas windows b2.3a b3.4 " style="--c:#F59E0B;--cr:245,158,11;--rd:0.08s">
+                    <div class="card-top">
+                        <div class="project-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                        <span class="card-num mono">05</span>
+                    </div>
+                    <h3 class="project-title">Sauvegardes automatisées vers le NAS</h3>
+                    <p class="project-desc">Scripts robocopy planifiés avec le Planificateur de tâches Windows pour sauvegarder des données vers le NAS sans manipulation manuelle.</p>
+                    <div class="project-techs"><span class="tech-badge">robocopy</span><span class="tech-badge">Planificateur de tâches</span><span class="tech-badge">NAS</span><span class="tech-badge">Windows</span></div>
+                    <p class="card-skills mono" title="Compétences du référentiel BTS SIO mobilisées">B2.3A · B3.4</p>
+                    <a class="btn-modal" href="pdf/Projet-05-Sauvegardes-automatisees-NAS.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Voir le projet</a>
+                </article>
+                <!-- FIN CARTE -->
+
+                <!-- DEBUT CARTE : Sécurité DHCP sous Packet Tracer -->
+                <article class="project-card tilt reveal" data-cats="reseau securite" data-search="securite dhcp sous packet tracer etude et simulation des attaques dhcp starvation et rogue dhcp, puis de la protection par dhcp snooping, dans cisco packet tracer. cisco packet tracer dhcp dhcp snooping b3.5a b3.3 b2.1a " style="--c:#EC4899;--cr:236,72,153;--rd:0.16s">
+                    <div class="card-top">
+                        <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <span class="card-num mono">06</span>
+                    </div>
+                    <h3 class="project-title">Sécurité DHCP sous Packet Tracer</h3>
+                    <p class="project-desc">Étude et simulation des attaques DHCP Starvation et Rogue DHCP, puis de la protection par DHCP Snooping, dans Cisco Packet Tracer.</p>
+                    <div class="project-techs"><span class="tech-badge">Cisco Packet Tracer</span><span class="tech-badge">DHCP</span><span class="tech-badge">DHCP Snooping</span></div>
+                    <p class="card-skills mono" title="Compétences du référentiel BTS SIO mobilisées">B3.5A · B3.3 · B2.1A</p>
+                    <a class="btn-modal" href="pdf/Projet-06-Securite-DHCP-Packet-Tracer.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Voir le projet</a>
+                </article>
+                <!-- FIN CARTE -->
+
+                <!-- DEBUT CARTE : Infrastructure réseau : baie, brassage et VLAN -->
+                <article class="project-card tilt reveal" data-cats="reseau" data-search="infrastructure reseau : baie, brassage et vlan travaux pratiques d’infrastructure : cablage d’une baie, panneaux de brassage, segmentation en vlan et connexion d’un nas au reseau. vlan baie de brassage patch panel nas b2.1a b2.2a b2.3a " style="--c:#6366F1;--cr:99,102,241;--rd:0.00s">
+                    <div class="card-top">
+                        <div class="project-icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <span class="card-num mono">07</span>
+                    </div>
+                    <h3 class="project-title">Infrastructure réseau : baie, brassage et VLAN</h3>
+                    <p class="project-desc">Travaux pratiques d’infrastructure : câblage d’une baie, panneaux de brassage, segmentation en VLAN et connexion d’un NAS au réseau.</p>
+                    <div class="project-techs"><span class="tech-badge">VLAN</span><span class="tech-badge">Baie de brassage</span><span class="tech-badge">Patch panel</span><span class="tech-badge">NAS</span></div>
+                    <p class="card-skills mono" title="Compétences du référentiel BTS SIO mobilisées">B2.1A · B2.2A · B2.3A</p>
+                    <a class="btn-modal" href="pdf/Projet-07-Infrastructure-reseau-baie-VLAN.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Voir le projet</a>
+                </article>
+                <!-- FIN CARTE -->
+
+                <!-- DEBUT CARTE : Site de petites annonces PHP / MySQL -->
+                <article class="project-card tilt reveal" data-cats="web" data-search="site de petites annonces php / mysql site dynamique inspire de leboncoin : base de donnees (annonces, utilisateurs, favoris, messages), pages php et feuilles de style css. php mysql phpmyadmin mamp css b1.3 " style="--c:#14B8A6;--cr:20,184,166;--rd:0.08s">
+                    <div class="card-top">
+                        <div class="project-icon"><i class="fa-solid fa-store"></i></div>
+                        <span class="card-num mono">08</span>
+                    </div>
+                    <h3 class="project-title">Site de petites annonces PHP / MySQL</h3>
+                    <p class="project-desc">Site dynamique inspiré de LeBonCoin : base de données (annonces, utilisateurs, favoris, messages), pages PHP et feuilles de style CSS.</p>
+                    <div class="project-techs"><span class="tech-badge">PHP</span><span class="tech-badge">MySQL</span><span class="tech-badge">phpMyAdmin</span><span class="tech-badge">MAMP</span><span class="tech-badge">CSS</span></div>
+                    <p class="card-skills mono" title="Compétences du référentiel BTS SIO mobilisées">B1.3</p>
+                    <a class="btn-modal" href="pdf/Projet-08-Site-petites-annonces-PHP-MySQL.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Voir le projet</a>
+                </article>
+                <!-- FIN CARTE -->
+            </div>
+            <p class="empty-msg" id="projEmpty" hidden>Aucun projet ne correspond à cette recherche.</p>
+            <p class="foot-note">Les schémas des fiches sont des illustrations pédagogiques. Les captures d’écran de la fiche GLPI proviennent de mon TP.</p>
+        </section>
+
+        <!-- ===================== STAGE ===================== -->
+        <section id="stage" class="section">
+            <div class="section-header reveal">
+                <span class="eyebrow mono">03 · Stage</span>
+                <h2 class="section-title"><i class="fa-solid fa-briefcase"></i><span>Stage chez Elicéo</span></h2>
+                <p class="section-desc">Mon stage de technicien informatique : l’entreprise, mes missions et ce que j’en retiens.</p>
+            </div>
+            <div class="stage-wrap">
+                <div class="panel reveal">
+                    <span class="panel-kicker mono">L’ENTREPRISE</span>
+                    <h3>Elicéo</h3>
+                    <p>Elicéo est une entreprise informatique implantée à Saint-Brice-sous-Forêt, dans le Val-d’Oise. J’ai intégré son équipe informatique. Les missions qui m’ont été confiées portaient sur l’informatique de clients de l’entreprise : sécurité du réseau avec des pare-feu, messagerie et environnement Microsoft 365, stockage des données sur des serveurs NAS, documentation des réseaux et maintenance de postes de travail.</p>
+                    <div class="domains">
+                        <div class="domain-row"><span class="domain-k">Messagerie et collaboration</span><span class="domain-v"><span class="tech-badge">Microsoft 365</span><span class="tech-badge">Exchange Online</span><span class="tech-badge">MFA</span><span class="tech-badge">Messagerie OVH</span></span></div>
+                        <div class="domain-row"><span class="domain-k">Sécurité du réseau</span><span class="domain-v"><span class="tech-badge">Pare-feu WatchGuard</span></span></div>
+                        <div class="domain-row"><span class="domain-k">Stockage et sauvegarde</span><span class="domain-v"><span class="tech-badge">Serveurs NAS</span><span class="tech-badge">Volumes RAID</span></span></div>
+                        <div class="domain-row"><span class="domain-k">Documentation réseau</span><span class="domain-v"><span class="tech-badge">Advanced IP Scanner</span><span class="tech-badge">Schémas réseau</span></span></div>
+                        <div class="domain-row"><span class="domain-k">Postes de travail</span><span class="domain-v"><span class="tech-badge">Windows</span><span class="tech-badge">Disques et matériel</span></span></div>
+                    </div>
+                </div>
+                <div class="tiles reveal" style="--rd:.1s">
+                        <div class="tile"><small class="mono"><i class="fa-solid fa-location-dot"></i> Lieu</small><strong>Saint-Brice-sous-Forêt (Val-d’Oise)</strong></div>
+                        <div class="tile"><small class="mono"><i class="fa-solid fa-calendar-days"></i> Période</small><strong>du 11 mai au 26 juin 2026</strong></div>
+                        <div class="tile"><small class="mono"><i class="fa-solid fa-user-gear"></i> Fonction</small><strong>Stagiaire technicien informatique</strong></div>
+                        <div class="tile"><small class="mono"><i class="fa-solid fa-graduation-cap"></i> Cadre</small><strong>BTS SIO option SISR — 1re année</strong></div>
+                </div>
+            </div>
+
+            <h3 class="sub-title reveal"><i class="fa-solid fa-list-check"></i> Missions réalisées</h3>
+            <div class="projects-grid" id="missionsGrid">
+
+                <!-- DEBUT CARTE : Double authentification Microsoft 365 -->
+                <article class="project-card tilt reveal" data-cats="" data-search="double authentification microsoft 365 securiser l’acces aux comptes microsoft 365 avec un second facteur d’authentification (mfa). microsoft 365 mfa authenticator b3.3 b3.2 b1.5 " style="--c:#EC4899;--cr:236,72,153;--rd:0.00s">
+                    <div class="card-top">
+                        <div class="project-icon"><i class="fa-solid fa-user-shield"></i></div>
+                        <span class="card-num mono">01</span>
+                    </div>
+                    <h3 class="project-title">Double authentification Microsoft 365</h3>
+                    <p class="project-desc">Sécuriser l’accès aux comptes Microsoft 365 avec un second facteur d’authentification (MFA).</p>
+                    <div class="project-techs"><span class="tech-badge">Microsoft 365</span><span class="tech-badge">MFA</span><span class="tech-badge">Authenticator</span></div>
+                    <p class="card-skills mono" title="Compétences du référentiel BTS SIO mobilisées">B3.3 · B3.2 · B1.5</p>
+                    <a class="btn-modal" href="pdf/Stage-01-Double-authentification-Microsoft-365.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Voir la mission</a>
+                </article>
+                <!-- FIN CARTE -->
+
+                <!-- DEBUT CARTE : Migration des messageries OVH vers Microsoft 365 -->
+                <article class="project-card tilt reveal" data-cats="" data-search="migration des messageries ovh vers microsoft 365 passage de boites e-mail hebergees chez ovh vers microsoft 365 (exchange online) : copie des donnees et bascule du courrier. ovh microsoft 365 exchange online dns b1.5 b2.2a b1.2 " style="--c:#3B82F6;--cr:59,130,246;--rd:0.08s">
+                    <div class="card-top">
+                        <div class="project-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                        <span class="card-num mono">02</span>
+                    </div>
+                    <h3 class="project-title">Migration des messageries OVH vers Microsoft 365</h3>
+                    <p class="project-desc">Passage de boîtes e-mail hébergées chez OVH vers Microsoft 365 (Exchange Online) : copie des données et bascule du courrier.</p>
+                    <div class="project-techs"><span class="tech-badge">OVH</span><span class="tech-badge">Microsoft 365</span><span class="tech-badge">Exchange Online</span><span class="tech-badge">DNS</span></div>
+                    <p class="card-skills mono" title="Compétences du référentiel BTS SIO mobilisées">B1.5 · B2.2A · B1.2</p>
+                    <a class="btn-modal" href="pdf/Stage-02-Migration-messagerie-OVH-Microsoft-365.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Voir la mission</a>
+                </article>
+                <!-- FIN CARTE -->
+
+                <!-- DEBUT CARTE : Pare-feu WatchGuard -->
+                <article class="project-card tilt reveal" data-cats="" data-search="pare-feu watchguard decouverte et participation a la configuration de pare-feu watchguard : zones, regles de filtrage, nat et services de securite. watchguard pare-feu nat vpn b3.5a b2.2a b3.3 " style="--c:#EF4444;--cr:239,68,68;--rd:0.16s">
+                    <div class="card-top">
+                        <div class="project-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                        <span class="card-num mono">03</span>
+                    </div>
+                    <h3 class="project-title">Pare-feu WatchGuard</h3>
+                    <p class="project-desc">Découverte et participation à la configuration de pare-feu WatchGuard : zones, règles de filtrage, NAT et services de sécurité.</p>
+                    <div class="project-techs"><span class="tech-badge">WatchGuard</span><span class="tech-badge">Pare-feu</span><span class="tech-badge">NAT</span><span class="tech-badge">VPN</span></div>
+                    <p class="card-skills mono" title="Compétences du référentiel BTS SIO mobilisées">B3.5A · B2.2A · B3.3</p>
+                    <a class="btn-modal" href="pdf/Stage-03-Pare-feu-WatchGuard.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Voir la mission</a>
+                </article>
+                <!-- FIN CARTE -->
+
+                <!-- DEBUT CARTE : Schémas réseau des clients -->
+                <article class="project-card tilt reveal" data-cats="" data-search="schemas reseau des clients cartographie de reseaux clients avec advanced ip scanner : inventaire des equipements puis realisation d’un schema reseau. advanced ip scanner schema reseau inventaire b1.1 b2.2a b2.3a " style="--c:#8B5CF6;--cr:139,92,246;--rd:0.00s">
+                    <div class="card-top">
+                        <div class="project-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                        <span class="card-num mono">04</span>
+                    </div>
+                    <h3 class="project-title">Schémas réseau des clients</h3>
+                    <p class="project-desc">Cartographie de réseaux clients avec Advanced IP Scanner : inventaire des équipements puis réalisation d’un schéma réseau.</p>
+                    <div class="project-techs"><span class="tech-badge">Advanced IP Scanner</span><span class="tech-badge">Schéma réseau</span><span class="tech-badge">Inventaire</span></div>
+                    <p class="card-skills mono" title="Compétences du référentiel BTS SIO mobilisées">B1.1 · B2.2A · B2.3A</p>
+                    <a class="btn-modal" href="pdf/Stage-04-Schemas-reseau-Advanced-IP-Scanner.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Voir la mission</a>
+                </article>
+                <!-- FIN CARTE -->
+
+                <!-- DEBUT CARTE : Réinstallation de postes, disques et matériel -->
+                <article class="project-card tilt reveal" data-cats="" data-search="reinstallation de postes, disques et materiel reinstallation de postes de travail, remplacement de disques et interventions sur le materiel informatique. windows materiel support sauvegarde b1.2 b1.1 " style="--c:#06B6D4;--cr:6,182,212;--rd:0.08s">
+                    <div class="card-top">
+                        <div class="project-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                        <span class="card-num mono">05</span>
+                    </div>
+                    <h3 class="project-title">Réinstallation de postes, disques et matériel</h3>
+                    <p class="project-desc">Réinstallation de postes de travail, remplacement de disques et interventions sur le matériel informatique.</p>
+                    <div class="project-techs"><span class="tech-badge">Windows</span><span class="tech-badge">Matériel</span><span class="tech-badge">Support</span><span class="tech-badge">Sauvegarde</span></div>
+                    <p class="card-skills mono" title="Compétences du référentiel BTS SIO mobilisées">B1.2 · B1.1</p>
+                    <a class="btn-modal" href="pdf/Stage-05-Reinstallation-postes-disques-materiel.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Voir la mission</a>
+                </article>
+                <!-- FIN CARTE -->
+
+                <!-- DEBUT CARTE : Incident : disques en panne sur un NAS -->
+                <article class="project-card tilt reveal" data-cats="" data-search="incident : disques en panne sur un nas panne de disques sur un serveur nas qui bipait : une premiere confrontation a un incident de stockage, et les bons reflexes a retenir. nas raid incident sauvegarde b1.2 b3.4 b2.3a " style="--c:#F59E0B;--cr:245,158,11;--rd:0.16s">
+                    <div class="card-top">
+                        <div class="project-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <span class="card-num mono">06</span>
+                    </div>
+                    <h3 class="project-title">Incident : disques en panne sur un NAS</h3>
+                    <p class="project-desc">Panne de disques sur un serveur NAS qui bipait : une première confrontation à un incident de stockage, et les bons réflexes à retenir.</p>
+                    <div class="project-techs"><span class="tech-badge">NAS</span><span class="tech-badge">RAID</span><span class="tech-badge">Incident</span><span class="tech-badge">Sauvegarde</span></div>
+                    <p class="card-skills mono" title="Compétences du référentiel BTS SIO mobilisées">B1.2 · B3.4 · B2.3A</p>
+                    <a class="btn-modal" href="pdf/Stage-06-Incident-NAS-disques-en-panne.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Voir la mission</a>
+                </article>
+                <!-- FIN CARTE -->
+            </div>
+
+            <div class="stage-end">
+                <div class="panel reveal">
+                    <span class="panel-kicker mono">BILAN</span>
+                    <h3>Ce que le stage m’a apporté</h3>
+                    <ul class="plain-list">
+                        <li>Découvrir le fonctionnement d’une équipe informatique et travailler en équipe.</li>
+                        <li>Mettre en pratique, dans un cadre professionnel, des notions vues en cours : sécurité, messagerie, réseau et stockage.</li>
+                        <li>Comprendre l’importance de la rigueur, de la documentation et de la confidentialité des données des clients.</li>
+                        <li>Apprendre à réagir face à un incident : constater, diagnostiquer, prévenir, puis agir.</li>
+                    </ul>
+                </div>
+                <div class="panel cta reveal" style="--rd:.1s">
+                    <i class="fa-solid fa-file-pdf cta-ico"></i>
+                    <h3>Dossier de stage complet</h3>
+                    <p>L’entreprise, les six missions, l’incident NAS, le bilan et les compétences mobilisées, en un seul document.</p>
+                    <a class="btn btn-primary" href="pdf/Stage-00-Dossier-de-stage-Eliceo.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i><span>Ouvrir le dossier de stage</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== COMPETENCES ===================== -->
+        <section id="competences" class="section">
+            <div class="section-header reveal">
+                <span class="eyebrow mono">04 · Compétences</span>
+                <h2 class="section-title"><i class="fa-solid fa-list-check"></i><span>Compétences</span></h2>
+                <p class="section-desc">Mes compétences techniques, puis les compétences du référentiel BTS SIO illustrées par mes fiches.</p>
+            </div>
+            <h3 class="sub-title reveal"><i class="fa-solid fa-screwdriver-wrench"></i> Compétences techniques</h3>
+            <div class="skills-grid">
+                <div class="skill-card tilt reveal" style="--c:#06B6D4;--cr:6,182,212;--rd:0.00s">
+                    <div class="skill-header"><div class="skill-ico"><i class="fa-solid fa-network-wired"></i></div><h3>Réseaux</h3></div>
+                    <ul class="skill-list"><li>TCP/IP, IPv4</li><li>DHCP, DNS</li><li>VLAN, routage, NAT</li><li>Wi-Fi</li></ul>
+                </div>
+                <div class="skill-card tilt reveal" style="--c:#8B5CF6;--cr:139,92,246;--rd:0.06s">
+                    <div class="skill-header"><div class="skill-ico"><i class="fa-solid fa-server"></i></div><h3>Systèmes</h3></div>
+                    <ul class="skill-list"><li>Windows</li><li>Windows Server</li><li>Linux</li></ul>
+                </div>
+                <div class="skill-card tilt reveal" style="--c:#3B82F6;--cr:59,130,246;--rd:0.12s">
+                    <div class="skill-header"><div class="skill-ico"><i class="fa-solid fa-users-gear"></i></div><h3>Administration</h3></div>
+                    <ul class="skill-list"><li>Active Directory</li><li>Utilisateurs et droits</li><li>GPO</li></ul>
+                </div>
+                <div class="skill-card tilt reveal" style="--c:#10B981;--cr:16,185,129;--rd:0.18s">
+                    <div class="skill-header"><div class="skill-ico"><i class="fa-solid fa-cubes"></i></div><h3>Virtualisation</h3></div>
+                    <ul class="skill-list"><li>VMware</li><li>VirtualBox</li><li>Proxmox</li></ul>
+                </div>
+                <div class="skill-card tilt reveal" style="--c:#F59E0B;--cr:245,158,11;--rd:0.00s">
+                    <div class="skill-header"><div class="skill-ico"><i class="fa-solid fa-plug"></i></div><h3>Services</h3></div>
+                    <ul class="skill-list"><li>SSH</li><li>FTP</li><li>Apache</li></ul>
+                </div>
+                <div class="skill-card tilt reveal" style="--c:#EC4899;--cr:236,72,153;--rd:0.06s">
+                    <div class="skill-header"><div class="skill-ico"><i class="fa-solid fa-shield-halved"></i></div><h3>Sécurité</h3></div>
+                    <ul class="skill-list"><li>Pare-feu</li><li>ACL</li><li>Antivirus</li><li>Sauvegardes</li></ul>
+                </div>
+                <div class="skill-card tilt reveal" style="--c:#06B6D4;--cr:6,182,212;--rd:0.12s">
+                    <div class="skill-header"><div class="skill-ico"><i class="fa-solid fa-chart-line"></i></div><h3>Supervision et diagnostic</h3></div>
+                    <ul class="skill-list"><li>Wireshark</li><li>Zabbix</li><li>GLPI</li><li>TeamViewer</li></ul>
+                </div>
+                <div class="skill-card tilt reveal" style="--c:#8B5CF6;--cr:139,92,246;--rd:0.18s">
+                    <div class="skill-header"><div class="skill-ico"><i class="fa-solid fa-terminal"></i></div><h3>Scripts</h3></div>
+                    <ul class="skill-list"><li>PowerShell (bases)</li><li>Bash</li><li>Python</li></ul>
+                </div>
+                <div class="skill-card tilt reveal" style="--c:#3B82F6;--cr:59,130,246;--rd:0.00s">
+                    <div class="skill-header"><div class="skill-ico"><i class="fa-solid fa-database"></i></div><h3>Bases de données</h3></div>
+                    <ul class="skill-list"><li>SQL</li><li>MySQL</li></ul>
+                </div>
+                <div class="skill-card tilt reveal" style="--c:#10B981;--cr:16,185,129;--rd:0.06s">
+                    <div class="skill-header"><div class="skill-ico"><i class="fa-solid fa-envelope-open-text"></i></div><h3>Bureautique</h3></div>
+                    <ul class="skill-list"><li>Microsoft 365</li><li>Word, Excel, Outlook</li><li>Teams, OneDrive</li></ul>
+                </div>
+                <div class="skill-card tilt reveal" style="--c:#F59E0B;--cr:245,158,11;--rd:0.12s">
+                    <div class="skill-header"><div class="skill-ico"><i class="fa-solid fa-headset"></i></div><h3>Support informatique</h3></div>
+                    <ul class="skill-list"><li>Installation, configuration</li><li>Maintenance</li><li>Résolution d’incidents</li></ul>
+                </div>
+            </div>
+            <h3 class="sub-title reveal"><i class="fa-solid fa-medal"></i> Compétences du référentiel illustrées par mes fiches</h3>
+            <p class="section-desc reveal" style="margin-bottom:1.6rem">Chaque pastille ouvre la fiche PDF qui illustre la compétence.</p>
+            <div class="ref-grid">
+                <div class="ref-bloc reveal" style="--bc:#3B82F6">
+                    <h3><i class="fa-solid fa-layer-group"></i> Bloc 1 — Support et mise à disposition de services informatiques</h3>
+                    <div class="ref-row">
+                        <span class="ref-code mono">B1.1</span>
+                        <div><div class="ref-label">Gérer le patrimoine informatique</div><div class="doc-chips"><a class="doc-chip" href="pdf/Projet-02-GLPI-LDAP-Active-Directory.pdf" target="_blank" rel="noopener">GLPI</a><a class="doc-chip" href="pdf/Projet-04-Reseau-domestique-NAS-Synology.pdf" target="_blank" rel="noopener">NAS Synology</a><a class="doc-chip" href="pdf/Stage-04-Schemas-reseau-Advanced-IP-Scanner.pdf" target="_blank" rel="noopener">Schémas réseau</a><a class="doc-chip" href="pdf/Stage-05-Reinstallation-postes-disques-materiel.pdf" target="_blank" rel="noopener">Réinstallation postes</a></div></div>
+                    </div>
+                    <div class="ref-row">
+                        <span class="ref-code mono">B1.2</span>
+                        <div><div class="ref-label">Répondre aux incidents et aux demandes d’assistance et d’évolution</div><div class="doc-chips"><a class="doc-chip" href="pdf/Stage-02-Migration-messagerie-OVH-Microsoft-365.pdf" target="_blank" rel="noopener">Migration messagerie</a><a class="doc-chip" href="pdf/Stage-05-Reinstallation-postes-disques-materiel.pdf" target="_blank" rel="noopener">Réinstallation postes</a><a class="doc-chip" href="pdf/Stage-06-Incident-NAS-disques-en-panne.pdf" target="_blank" rel="noopener">Incident NAS</a></div></div>
+                    </div>
+                    <div class="ref-row">
+                        <span class="ref-code mono">B1.3</span>
+                        <div><div class="ref-label">Développer la présence en ligne de l’organisation</div><div class="doc-chips"><a class="doc-chip" href="pdf/Projet-08-Site-petites-annonces-PHP-MySQL.pdf" target="_blank" rel="noopener">PHP / MySQL</a></div></div>
+                    </div>
+                    <div class="ref-row">
+                        <span class="ref-code mono">B1.5</span>
+                        <div><div class="ref-label">Mettre à disposition des utilisateurs un service informatique</div><div class="doc-chips"><a class="doc-chip" href="pdf/Projet-01-Active-Directory-Windows-Server-2022.pdf" target="_blank" rel="noopener">AD DS</a><a class="doc-chip" href="pdf/Projet-02-GLPI-LDAP-Active-Directory.pdf" target="_blank" rel="noopener">GLPI</a><a class="doc-chip" href="pdf/Stage-01-Double-authentification-Microsoft-365.pdf" target="_blank" rel="noopener">MFA Microsoft 365</a><a class="doc-chip" href="pdf/Stage-02-Migration-messagerie-OVH-Microsoft-365.pdf" target="_blank" rel="noopener">Migration messagerie</a></div></div>
+                    </div>
+                    <div class="ref-row">
+                        <span class="ref-code mono">B1.6</span>
+                        <div><div class="ref-label">Organiser son développement professionnel</div><div class="doc-chips"><a class="doc-chip" href="#veille">Veille sur l’IA</a></div></div>
+                    </div>
+                </div>
+                <div class="ref-bloc reveal" style="--bc:#8B5CF6">
+                    <h3><i class="fa-solid fa-layer-group"></i> Bloc 2 — Administration des systèmes et des réseaux (option SISR)</h3>
+                    <div class="ref-row">
+                        <span class="ref-code mono">B2.1A</span>
+                        <div><div class="ref-label">Concevoir une solution d’infrastructure réseau</div><div class="doc-chips"><a class="doc-chip" href="pdf/Projet-03-Laboratoire-VMware-Workstation.pdf" target="_blank" rel="noopener">VMware</a><a class="doc-chip" href="pdf/Projet-06-Securite-DHCP-Packet-Tracer.pdf" target="_blank" rel="noopener">DHCP</a><a class="doc-chip" href="pdf/Projet-07-Infrastructure-reseau-baie-VLAN.pdf" target="_blank" rel="noopener">VLAN</a></div></div>
+                    </div>
+                    <div class="ref-row">
+                        <span class="ref-code mono">B2.2A</span>
+                        <div><div class="ref-label">Installer, tester et déployer une solution d’infrastructure réseau</div><div class="doc-chips"><a class="doc-chip" href="pdf/Projet-01-Active-Directory-Windows-Server-2022.pdf" target="_blank" rel="noopener">AD DS</a><a class="doc-chip" href="pdf/Projet-02-GLPI-LDAP-Active-Directory.pdf" target="_blank" rel="noopener">GLPI</a><a class="doc-chip" href="pdf/Projet-03-Laboratoire-VMware-Workstation.pdf" target="_blank" rel="noopener">VMware</a><a class="doc-chip" href="pdf/Projet-04-Reseau-domestique-NAS-Synology.pdf" target="_blank" rel="noopener">NAS Synology</a><a class="doc-chip" href="pdf/Projet-07-Infrastructure-reseau-baie-VLAN.pdf" target="_blank" rel="noopener">VLAN</a><a class="doc-chip" href="pdf/Stage-02-Migration-messagerie-OVH-Microsoft-365.pdf" target="_blank" rel="noopener">Migration messagerie</a><a class="doc-chip" href="pdf/Stage-03-Pare-feu-WatchGuard.pdf" target="_blank" rel="noopener">WatchGuard</a><a class="doc-chip" href="pdf/Stage-04-Schemas-reseau-Advanced-IP-Scanner.pdf" target="_blank" rel="noopener">Schémas réseau</a></div></div>
+                    </div>
+                    <div class="ref-row">
+                        <span class="ref-code mono">B2.3A</span>
+                        <div><div class="ref-label">Exploiter, dépanner et superviser une solution d’infrastructure réseau</div><div class="doc-chips"><a class="doc-chip" href="pdf/Projet-03-Laboratoire-VMware-Workstation.pdf" target="_blank" rel="noopener">VMware</a><a class="doc-chip" href="pdf/Projet-04-Reseau-domestique-NAS-Synology.pdf" target="_blank" rel="noopener">NAS Synology</a><a class="doc-chip" href="pdf/Projet-05-Sauvegardes-automatisees-NAS.pdf" target="_blank" rel="noopener">Sauvegardes</a><a class="doc-chip" href="pdf/Projet-07-Infrastructure-reseau-baie-VLAN.pdf" target="_blank" rel="noopener">VLAN</a><a class="doc-chip" href="pdf/Stage-04-Schemas-reseau-Advanced-IP-Scanner.pdf" target="_blank" rel="noopener">Schémas réseau</a><a class="doc-chip" href="pdf/Stage-06-Incident-NAS-disques-en-panne.pdf" target="_blank" rel="noopener">Incident NAS</a></div></div>
+                    </div>
+                </div>
+                <div class="ref-bloc reveal" style="--bc:#EC4899">
+                    <h3><i class="fa-solid fa-layer-group"></i> Bloc 3 — Cybersécurité des services informatiques</h3>
+                    <div class="ref-row">
+                        <span class="ref-code mono">B3.2</span>
+                        <div><div class="ref-label">Préserver l’identité numérique de l’organisation</div><div class="doc-chips"><a class="doc-chip" href="pdf/Stage-01-Double-authentification-Microsoft-365.pdf" target="_blank" rel="noopener">MFA Microsoft 365</a></div></div>
+                    </div>
+                    <div class="ref-row">
+                        <span class="ref-code mono">B3.3</span>
+                        <div><div class="ref-label">Sécuriser les équipements et les usages des utilisateurs</div><div class="doc-chips"><a class="doc-chip" href="pdf/Projet-01-Active-Directory-Windows-Server-2022.pdf" target="_blank" rel="noopener">AD DS</a><a class="doc-chip" href="pdf/Projet-02-GLPI-LDAP-Active-Directory.pdf" target="_blank" rel="noopener">GLPI</a><a class="doc-chip" href="pdf/Projet-06-Securite-DHCP-Packet-Tracer.pdf" target="_blank" rel="noopener">DHCP</a><a class="doc-chip" href="pdf/Stage-01-Double-authentification-Microsoft-365.pdf" target="_blank" rel="noopener">MFA Microsoft 365</a><a class="doc-chip" href="pdf/Stage-03-Pare-feu-WatchGuard.pdf" target="_blank" rel="noopener">WatchGuard</a></div></div>
+                    </div>
+                    <div class="ref-row">
+                        <span class="ref-code mono">B3.4</span>
+                        <div><div class="ref-label">Garantir la disponibilité, l’intégrité et la confidentialité des services informatiques et des données de l’organisation face à des cyberattaques</div><div class="doc-chips"><a class="doc-chip" href="pdf/Projet-04-Reseau-domestique-NAS-Synology.pdf" target="_blank" rel="noopener">NAS Synology</a><a class="doc-chip" href="pdf/Projet-05-Sauvegardes-automatisees-NAS.pdf" target="_blank" rel="noopener">Sauvegardes</a><a class="doc-chip" href="pdf/Stage-06-Incident-NAS-disques-en-panne.pdf" target="_blank" rel="noopener">Incident NAS</a></div></div>
+                    </div>
+                    <div class="ref-row">
+                        <span class="ref-code mono">B3.5A</span>
+                        <div><div class="ref-label">Assurer la cybersécurité d’une infrastructure réseau, d’un système, d’un service</div><div class="doc-chips"><a class="doc-chip" href="pdf/Projet-06-Securite-DHCP-Packet-Tracer.pdf" target="_blank" rel="noopener">DHCP</a><a class="doc-chip" href="pdf/Stage-03-Pare-feu-WatchGuard.pdf" target="_blank" rel="noopener">WatchGuard</a></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== E5 / E6 ===================== -->
+        <section id="epreuves" class="section">
+            <div class="section-header reveal">
+                <span class="eyebrow mono">05 · E5 / E6</span>
+                <h2 class="section-title"><i class="fa-solid fa-folder-open"></i><span>Épreuves E5 et E6</span></h2>
+                <p class="section-desc">Les pièces de mon dossier, classées par épreuve.</p>
+            </div>
+            <div class="epr-grid">
+                <article class="epr-card tilt reveal" style="--c:#8B5CF6;--cr:139,92,246;--rd:0.00s">
+                    <div class="epr-top"><span class="epr-num mono">E5</span><div class="project-icon"><i class="fa-solid fa-headset"></i></div></div>
+                    <h3>Support et mise à disposition de services informatiques</h3>
+                    <p>Épreuve orale appuyée sur le portfolio, des réalisations professionnelles et les compétences mobilisées.</p>
+                    <ul class="epr-list">
+                        <li><a href="#top"><i class="fa-solid fa-globe"></i> Ce portfolio en ligne</a></li>
+                        <li><a href="pdf/Stage-00-Dossier-de-stage-Eliceo.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Dossier de stage chez Elicéo</a></li>
+                        <li><a href="#stage"><i class="fa-solid fa-briefcase"></i> Six fiches de mission de stage</a></li>
+                    </ul>
+                </article>
+                <article class="epr-card tilt reveal" style="--c:#06B6D4;--cr:6,182,212;--rd:0.12s">
+                    <div class="epr-top"><span class="epr-num mono">E6</span><div class="project-icon"><i class="fa-solid fa-sitemap"></i></div></div>
+                    <h3>Administration des systèmes et des réseaux (option SISR)</h3>
+                    <p>Épreuve pratique et orale, appuyée sur deux fiches de réalisation.</p>
+                    <ul class="epr-list">
+                        <li><a href="pdf/Projet-01-Active-Directory-Windows-Server-2022.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Active Directory — Windows Server 2022</a></li>
+                        <li><a href="pdf/Projet-02-GLPI-LDAP-Active-Directory.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> GLPI — synchronisation LDAP avec Active Directory</a></li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===================== PROFIL ===================== -->
+        <section id="profil" class="section">
+            <div class="section-header reveal">
+                <span class="eyebrow mono">06 · Profil</span>
+                <h2 class="section-title"><i class="fa-solid fa-user"></i><span>Profil</span></h2>
+                <p class="section-desc">Mon projet professionnel, mes atouts et mes certifications.</p>
+            </div>
+            <div class="panel pro reveal">
+                <span class="panel-kicker mono">PROJET PROFESSIONNEL</span>
+                <h3>Devenir Administrateur Systèmes et Réseaux</h3>
+                <p>Mon objectif est de devenir administrateur systèmes et réseaux. Après le BTS SIO option SISR, je souhaite poursuivre mes études jusqu’au niveau Bac+5. Pour l’année 2026-2027, je recherche une alternance, au rythme d’une semaine en cours et d’une semaine en entreprise, afin de mettre en pratique ce que j’apprends.</p>
+            </div>
+
+            <h3 class="sub-title reveal"><i class="fa-solid fa-star"></i> Atouts et points forts</h3>
+            <div class="atouts">
+                <div class="atout tilt reveal" style="--c:#06B6D4;--cr:6,182,212;--rd:0.00s">
+                    <div class="atout-ico"><i class="fa-solid fa-people-group"></i></div>
+                    <h3>Esprit d’équipe</h3>
+                    <p>Stage au sein de l’équipe informatique d’Elicéo, avec des interventions menées en équipe.</p>
+                </div>
+                <div class="atout tilt reveal" style="--c:#EC4899;--cr:236,72,153;--rd:0.06s">
+                    <div class="atout-ico"><i class="fa-solid fa-fire"></i></div>
+                    <h3>Implication</h3>
+                    <p>Huit projets et six missions de stage documentés de bout en bout, avec schémas et procédures.</p>
+                </div>
+                <div class="atout tilt reveal" style="--c:#F59E0B;--cr:245,158,11;--rd:0.12s">
+                    <div class="atout-ico"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Réactivité</h3>
+                    <p>Face à une panne de disques sur un NAS : constater, diagnostiquer, sécuriser les données, puis agir.</p>
+                </div>
+                <div class="atout tilt reveal" style="--c:#8B5CF6;--cr:139,92,246;--rd:0.18s">
+                    <div class="atout-ico"><i class="fa-solid fa-compass"></i></div>
+                    <h3>Autonomie</h3>
+                    <p>Laboratoire de machines virtuelles, NAS et réseau domestique montés et administrés par moi-même.</p>
+                </div>
+                <div class="atout tilt reveal" style="--c:#3B82F6;--cr:59,130,246;--rd:0.00s">
+                    <div class="atout-ico"><i class="fa-solid fa-list-check"></i></div>
+                    <h3>Rigueur et méthode</h3>
+                    <p>Procédures en étapes, sauvegarde avant toute modification, documentation des changements.</p>
+                </div>
+                <div class="atout tilt reveal" style="--c:#10B981;--cr:16,185,129;--rd:0.06s">
+                    <div class="atout-ico"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <h3>Sens du service</h3>
+                    <p>Soutien aux utilisateurs : réinstallation de postes, double authentification, messagerie.</p>
+                </div>
+                <div class="atout tilt reveal" style="--c:#06B6D4;--cr:6,182,212;--rd:0.12s">
+                    <div class="atout-ico"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <h3>Curiosité technique</h3>
+                    <p>Veille sur l’intelligence artificielle et la cybersécurité à partir de sources officielles.</p>
+                </div>
+            </div>
+
+            <h3 class="sub-title reveal"><i class="fa-solid fa-award"></i> Certifications et langues</h3>
+            <div class="cert-grid">
+                <div class="cert-card tilt reveal" style="--c:#EC4899;--cr:236,72,153;--rd:0.0s">
+                    <div class="cert-ico"><i class="fa-solid fa-user-shield"></i></div>
+                    <h3>SecNumacadémie — ANSSI</h3>
+                    <p>Attestation de sensibilisation à la sécurité numérique</p>
+                </div>
+                <div class="cert-card tilt reveal" style="--c:#06B6D4;--cr:6,182,212;--rd:0.1s">
+                    <div class="cert-ico"><i class="fa-solid fa-certificate"></i></div>
+                    <h3>Cisco Networking Academy</h3>
+                    <p>Certification cybersécurité / réseaux</p>
+                </div>
+                <div class="cert-card tilt reveal" style="--c:#F59E0B;--cr:245,158,11;--rd:.2s">
+                    <div class="cert-ico"><i class="fa-solid fa-language"></i></div>
+                    <h3>Langues</h3>
+                    <ul class="lang-list"><li>Français</li><li>Anglais · niveau B2</li></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== VEILLE ===================== -->
+        <section id="veille" class="section">
+            <div class="section-header reveal">
+                <span class="eyebrow mono">07 · Veille</span>
+                <h2 class="section-title"><i class="fa-solid fa-rss"></i><span>Veille technologique</span></h2>
+                <p class="section-desc">Thème suivi : l’impact de l’intelligence artificielle sur la société, le travail et la sécurité.</p>
+            </div>
+            <div class="panel reveal">
+                <span class="panel-kicker mono">THÈME DE VEILLE · 2026</span>
+                <h3>L’intelligence artificielle transforme-t-elle notre société ?</h3>
+                <p>L’intelligence artificielle (IA) est utilisée dans de nombreux domaines : travail, éducation, services numériques, création de contenus. Elle automatise des tâches et aide à décider, mais elle pose aussi des questions sur l’emploi, la fiabilité des informations, les données personnelles et la réglementation. J’ai suivi ce sujet à partir de sources officielles.</p>
+            </div>
+            <div class="v-cards">
+                <article class="v-card tilt reveal" style="--c:#06B6D4;--cr:6,182,212;--rd:0.0s">
+                    <div class="v-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <h3>Emploi et compétences</h3>
+                    <p>L’OCDE explique que l’IA peut augmenter la productivité, soutenir la croissance et créer de nouvelles opportunités d’emploi. Des travailleurs peuvent toutefois être remplacés si la transition est mal accompagnée. Les effets varient selon le secteur, la région et le niveau de compétences : les travailleurs ont besoin de compétences adaptées à la demande qui évolue.</p>
+                    <p class="v-src mono"><i class="fa-solid fa-link"></i> OCDE — Skills in the AI age (2026)</p>
+                </article>
+                <article class="v-card tilt reveal" style="--c:#8B5CF6;--cr:139,92,246;--rd:0.1s">
+                    <div class="v-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>Éducation et formation</h3>
+                    <p>L’OCDE s’interroge sur la façon dont l’IA peut transformer l’enseignement et l’apprentissage. Un assistant peut aider à comprendre une notion, mais il ne remplace pas le travail personnel : ses réponses se vérifient et l’esprit critique reste indispensable.</p>
+                    <p class="v-src mono"><i class="fa-solid fa-link"></i> OCDE — Trends Shaping Education 2025</p>
+                </article>
+                <article class="v-card tilt reveal" style="--c:#EC4899;--cr:236,72,153;--rd:0.0s">
+                    <div class="v-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Données personnelles et cybersécurité</h3>
+                    <p>La CNIL a publié le 8 avril 2024 ses premières recommandations pour développer des systèmes d’IA dans le respect du RGPD (base légale, finalité, analyse d’impact, protection dès la conception). L’ANSSI a publié le 29 avril 2024 un guide de sécurité pour les systèmes d’IA générative : elle recommande la prudence quand on les intègre à un système d’information existant.</p>
+                    <p class="v-src mono"><i class="fa-solid fa-link"></i> CNIL (08/04/2024) · ANSSI (29/04/2024)</p>
+                </article>
+                <article class="v-card tilt reveal" style="--c:#F59E0B;--cr:245,158,11;--rd:0.1s">
+                    <div class="v-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <h3>Réglementation et fiabilité</h3>
+                    <p>Le 7 mai 2026, la Commission européenne a salué un accord politique sur la simplification du règlement européen sur l’IA : les règles pour les systèmes à haut risque s’appliqueront à partir du 2 décembre 2027, et celles des systèmes intégrés à des produits à partir du 2 août 2028. Une réponse générée par une IA peut rester inexacte ou inventée : on la contrôle toujours.</p>
+                    <p class="v-src mono"><i class="fa-solid fa-link"></i> Commission européenne (07/05/2026)</p>
+                </article>
+                <article class="v-card tilt reveal" style="--c:#3B82F6;--cr:59,130,246;--rd:0.0s">
+                    <div class="v-icon"><i class="fa-solid fa-landmark"></i></div>
+                    <h3>Services publics</h3>
+                    <p>L’OCDE souligne que les services publics personnalisés reposent sur la collecte et l’analyse de nombreuses données personnelles. Si l’IA n’est pas utilisée de façon fiable, ces efforts peuvent porter atteinte aux droits humains, dont le respect de la vie privée. Les administrations doivent agir de façon transparente.</p>
+                    <p class="v-src mono"><i class="fa-solid fa-link"></i> OCDE — Gouverner avec l’intelligence artificielle (2025)</p>
+                </article>
+                <article class="v-card tilt reveal" style="--c:#10B981;--cr:16,185,129;--rd:0.1s">
+                    <div class="v-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h3>Usages dans l’économie</h3>
+                    <p>L’OCDE suit la diffusion des technologies numériques et de l’IA dans l’économie, dans ses perspectives sur l’économie et la société numériques. Pour moi, cela veut dire que l’IA s’intègre peu à peu aux outils du quotidien d’un technicien (messagerie, support, supervision).</p>
+                    <p class="v-src mono"><i class="fa-solid fa-link"></i> OCDE — Digital Economy and Society Outlook 2026</p>
+                </article>
+            </div>
+            <div class="panel analysis reveal">
+                <h3><i class="fa-solid fa-lightbulb"></i> Ce que j’en retiens pour mon métier</h3>
+                <p>En BTS SIO SISR, l’IA peut aider à rédiger une procédure, expliquer un message d’erreur ou analyser des journaux. Mais un technicien doit relire et comprendre chaque commande avant de l’exécuter, surtout sur un serveur ou un pare-feu.</p>
+                <p>Les données de l’entreprise et des clients ne se transmettent pas à un outil d’IA sans autorisation : c’est un enjeu de confidentialité, donc de RGPD et de sécurité. Pour moi, l’IA reste un outil d’assistance, utilisé avec méthode, esprit critique et prudence.</p>
+            </div>
+            <div class="panel sources reveal">
+                <h3><i class="fa-solid fa-book-open"></i> Sources de la veille</h3>
+                <ul>
+                    <li><span class="src-org mono">OCDE</span> <a href="https://www.oecd.org/en/publications/skills-in-the-ai-age_972bd15e-en/full-report/component-3.html" target="_blank" rel="noopener">Skills in the AI age</a> <span class="src-meta">— 2026 · emploi, compétences, effets de l’IA sur le travail</span></li>
+                    <li><span class="src-org mono">OCDE</span> <a href="https://www.oecd.org/en/publications/oecd-digital-economy-and-society-outlook-2026_022ed474-en/full-report/digital-technology-diffusion-and-the-economy_b355e780.html" target="_blank" rel="noopener">Digital Economy and Society Outlook 2026</a> <span class="src-meta">— 2026 · diffusion du numérique et de l’IA dans l’économie</span></li>
+                    <li><span class="src-org mono">OCDE</span> <a href="https://www.oecd.org/fr/publications/gouverner-avec-l-intelligence-artificielle_6816434b-fr/full-report/how-artificial-intelligence-is-accelerating-the-digital-government-journey_d9552dc7.html" target="_blank" rel="noopener">Gouverner avec l’intelligence artificielle</a> <span class="src-meta">— 18 septembre 2025 · services publics, vie privée, transparence</span></li>
+                    <li><span class="src-org mono">OCDE</span> <a href="https://www.oecd.org/en/publications/trends-shaping-education-2025_ee6587fd-en/full-report/work-and-progress_423e3500.html" target="_blank" rel="noopener">Trends Shaping Education 2025 — Work and progress</a> <span class="src-meta">— 2025 · travail, éducation et nouvelles technologies</span></li>
+                    <li><span class="src-org mono">CNIL</span> <a href="https://www.cnil.fr/fr/ia-la-cnil-publie-ses-premieres-recommandations-sur-le-developpement-des-systemes-dintelligence" target="_blank" rel="noopener">IA : la CNIL publie ses premières recommandations sur le développement des systèmes d’intelligence artificielle</a> <span class="src-meta">— 8 avril 2024 · IA et RGPD</span></li>
+                    <li><span class="src-org mono">ANSSI</span> <a href="https://messervices.cyber.gouv.fr/guides/en-security-recommendations-generative-ai-system" target="_blank" rel="noopener">Recommandations de sécurité pour un système d’IA générative</a> <span class="src-meta">— 29 avril 2024 · sécurité des systèmes d’IA générative</span></li>
+                    <li><span class="src-org mono">Commission européenne</span> <a href="https://digital-strategy.ec.europa.eu/en/news/eu-agrees-simplify-ai-rules-boost-innovation-and-ban-nudification-apps-protect-citizens" target="_blank" rel="noopener">EU agrees to simplify AI rules to boost innovation and ban “nudification” apps to protect citizens</a> <span class="src-meta">— 7 mai 2026 · règlement européen sur l’IA : accord politique</span></li>
+                </ul>
+                <p class="foot-note">Sources consultées en novembre 2026. Les informations sont résumées avec mes mots ; les liens mènent aux documents d’origine.</p>
+            </div>
+        </section>
+
+        <!-- ===================== CONTACT ===================== -->
+        <section id="contact" class="section">
+            <div class="contact-card tilt reveal" id="contactCard">
+                <span class="eyebrow mono">08 · Contact</span>
+                <h2 class="grad-text">Travaillons ensemble</h2>
+                <p class="contact-sub">Daniel DEDE-WANOU — Administrateur Systèmes et Réseaux · BTS SIO SISR · Institut F2I. À la recherche d’une alternance pour 2026-2027.</p>
+                <div class="contact-links">
+                    <a href="mailto:danieldedewanou1@gmail.com" class="contact-item"><i class="fa-solid fa-envelope"></i> danieldedewanou1@gmail.com</a>
+                    <a href="tel:0759338642" class="contact-item"><i class="fa-solid fa-phone"></i> 07 59 33 86 42</a>
+                    <div class="contact-item"><i class="fa-solid fa-location-dot"></i> Champs-sur-Marne (77420)</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer><span>© 2026 Daniel DEDE-WANOU</span><span> · </span><span>Administrateur Systèmes et Réseaux</span></footer>
+
+    <button class="to-top" id="toTop" aria-label="Retour en haut"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+PORTFOLIO DE DANIEL DEDE-WANOU — BTS SIO option SISR
+=====================================================
+
+CE QU'IL Y A DANS LE DOSSIER
+  index.html   la page du portfolio
+  css/         le style de la page
+  js/          les animations, le thème clair/sombre, le filtre des projets
+  pdf/         les 15 documents PDF : 8 projets, le dossier de stage, 6 missions de stage
+  assets/      les polices et les icônes (en local : le site marche sans internet)
+
+POUR L'OUVRIR
+  - Double-clique sur index.html.
+  - Ou, dans VS Code : clic droit sur index.html > « Open with Live Server ».
+
+POUR LE METTRE EN LIGNE (GitHub Pages)
+  1. Ouvre ton dépôt GitHub > « Add file » > « Upload files ».
+  2. Glisse tout le contenu de ce dossier (index.html, css, js, pdf, assets) à la racine
+     du dépôt, en gardant les dossiers tels quels.
+  3. Supprime dans le dépôt les anciens fichiers qui ne servent plus
+     (anciens PDF « E5-Projet-... »).
+  4. Clique sur « Commit changes », attends une minute, puis actualise ton site.
+
+POUR AJOUTER UN PROJET
+  1. Mets ton nouveau PDF dans le dossier pdf/.
+  2. Ouvre index.html et cherche « DEBUT CARTE ». Copie un bloc entier, de
+     « <!-- DEBUT CARTE ... --> » jusqu'à « <!-- FIN CARTE --> », et colle-le juste après
+     un autre bloc de la même grille (celle qui s'appelle projectsGrid).
+  3. Change dans ce bloc :
+       - le titre et la description ;
+       - les petites étiquettes (tech-badge) ;
+       - le lien du PDF : href="pdf/nom-de-ton-fichier.pdf" ;
+       - data-cats : une ou plusieurs catégories parmi
+         systemes, reseau, virtualisation, securite, web ;
+       - data-search : des mots-clés pour la recherche (en minuscules, sans accents).
+  4. Si besoin, change le chiffre du haut de page (data-count).
+
+POUR AJOUTER UNE CERTIFICATION (bouton « Voir la certification »)
+  1. Mets le PDF dans pdf/.
+  2. Dans index.html, dans la carte de la certification, ajoute cette ligne juste avant
+     la fin de la carte :
+     <a class="mini-btn" href="pdf/nom-du-fichier.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Voir la certification</a>
+
+BON À SAVOIR
+  - Les schémas des PDF sont des illustrations pédagogiques. Les captures d'écran de la
+    fiche GLPI viennent de ton TP.
+  - Les PDF des missions de stage expliquent la méthode habituelle de chaque tâche :
+    relis-les avant l'oral pour pouvoir dire ce que tu as fait toi-même.
+  - La veille sur l'IA s'appuie sur des sources officielles consultées en novembre 2026
+    (OCDE, CNIL, ANSSI, Commission européenne). Les liens sont dans la page.
